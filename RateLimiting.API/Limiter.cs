@@ -21,7 +21,7 @@ namespace RateLimiting.API
         { 
             var currentTime = DateTime.UtcNow;
 
-            if (currentTime >= _resetTime && _requestLimit != 0)
+            if (currentTime == _resetTime && _requestLimit != 0)
             {
                 _requestLimit = 0;
                 _resetTime = currentTime.AddSeconds(20);
