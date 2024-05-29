@@ -14,7 +14,7 @@ namespace RateLimiting.API
         {
             _requestLimit = 0;
             _next = next;
-            _resetTime = DateTime.UtcNow.AddSeconds(20);
+            _resetTime = DateTime.UtcNow.AddSeconds(10);
         }
 
         public async Task InvokeAsync(HttpContext context)
